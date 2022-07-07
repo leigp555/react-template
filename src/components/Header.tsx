@@ -2,8 +2,11 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import  styled from 'styled-components'
 
-const StyleHeader=styled.header`
+const StyledHeader=styled.header`
    background-color: red;
+`
+const StyledLink=styled(Link)`
+   color: yellow;
 `
 
 interface Props {
@@ -11,13 +14,13 @@ interface Props {
 
 const Header: React.FC<Props> = () => {
     return (
-        <StyleHeader>
+        <StyledHeader>
             <nav>
-                <Link to={'/'}>首页</Link>
-                <Link to={'/history'}>上传历史</Link>
-                <Link to={'/about'}>关于我</Link>
+                <StyledLink to={'/'}>首页</StyledLink>
+                <StyledLink to={'/history'}>上传历史</StyledLink>
+                <StyledLink to={'/about'}>关于我</StyledLink>
             </nav>
-        </StyleHeader>
+        </StyledHeader>
     )
 }
 
