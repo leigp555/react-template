@@ -1,24 +1,27 @@
-import React from 'react';
+import React, {Suspense, lazy, ComponentType} from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/about";
-import History from "./pages/History";
-
+import Loading from "./components/Loading";
 import {
     Routes,
     Route,
 } from 'react-router-dom'
 
-function App() {
+const Home=lazy(():Promise<{ default: ComponentType<any> }> =>{return import('./pages/Home')})
+const About=lazy(():Promise<{ default: ComponentType<any> }> =>{return import('./pages/About')})
+const History=lazy(():Promise<{ default: ComponentType<any> }> =>{return import('./pages/History')})
+
+const App:React.FC<{}> =()=> {
     return (
         <div className="App">
             <Header/>
-            <Routes>
-                <Route path="/"  element={<Home/>}/>
-                <Route path="/history"  element={<History/>}/>
-                <Route path="/about"  element={<About/>}/>
-            </Routes>
+            <Suspense fallback={<Loading/>}>
+                <Routes>
+                    <Route path="/"  element={<Home/>}/>
+                    <Route path="/history"  element={<History/>}/>
+                    <Route path="/about"  element={<About/>}/>
+                </Routes>
+            </Suspense>
             <Footer/>
         </div>
     );

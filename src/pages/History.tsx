@@ -1,6 +1,8 @@
 import React from "react";
 
-function History(){
+interface Props{}
+
+const History:React.FC<Props> =()=>{
     return(
         <React.Fragment>
             <h1>history</h1>

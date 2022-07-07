@@ -1,6 +1,8 @@
 import React from "react";
 
-function About(){
+interface Props{}
+
+const About:React.FC<Props> =()=>{
     return(
         <React.Fragment>
             <h1>about</h1>

@@ -1,6 +1,7 @@
 import React from "react";
+interface Props{}
 
-function Footer(){
+const Footer:React.FC<Props> =()=>{
     return(
         <React.Fragment>
             <h1>footer</h1>
