@@ -22,7 +22,7 @@ const App: React.FC<{}> = () => {
         <React.Fragment>
             <Header/>
             <Suspense fallback={<Loading/>}>
-                <main>
+                <main id='main'>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
                         <Route path="/history" element={<History/>}/>

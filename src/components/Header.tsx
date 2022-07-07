@@ -1,17 +1,23 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import  styled from 'styled-components'
 
-interface Props{}
+const StyleHeader=styled.header`
+   background-color: red;
+`
 
-const Header:React.FC<Props> =()=>{
-    return(
-        <header>
+interface Props {
+}
+
+const Header: React.FC<Props> = () => {
+    return (
+        <StyleHeader>
             <nav>
-              <Link to={'/'} >首页</Link>
-              <Link to={'/history'}>上传历史</Link>
-              <Link to={'/about'}>关于我</Link>
+                <Link to={'/'}>首页</Link>
+                <Link to={'/history'}>上传历史</Link>
+                <Link to={'/about'}>关于我</Link>
             </nav>
-        </header>
+        </StyleHeader>
     )
 }
 
