@@ -3,9 +3,9 @@ interface Props{}
 
 const Footer:React.FC<Props> =()=>{
     return(
-        <React.Fragment>
+        <footer>
             <h1>footer</h1>
-        </React.Fragment>
+        </footer>
     )
 }
 

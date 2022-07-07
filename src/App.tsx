@@ -7,23 +7,31 @@ import {
     Route,
 } from 'react-router-dom'
 
-const Home=lazy(():Promise<{ default: ComponentType<any> }> =>{return import('./pages/Home')})
-const About=lazy(():Promise<{ default: ComponentType<any> }> =>{return import('./pages/About')})
-const History=lazy(():Promise<{ default: ComponentType<any> }> =>{return import('./pages/History')})
+const Home = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/Home')
+})
+const About = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/About')
+})
+const History = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/History')
+})
 
-const App:React.FC<{}> =()=> {
+const App: React.FC<{}> = () => {
     return (
-        <div className="App">
+        <React.Fragment>
             <Header/>
             <Suspense fallback={<Loading/>}>
-                <Routes>
-                    <Route path="/"  element={<Home/>}/>
-                    <Route path="/history"  element={<History/>}/>
-                    <Route path="/about"  element={<About/>}/>
-                </Routes>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/history" element={<History/>}/>
+                        <Route path="/about" element={<About/>}/>
+                    </Routes>
+                </main>
             </Suspense>
             <Footer/>
-        </div>
+        </React.Fragment>
     );
 }
 

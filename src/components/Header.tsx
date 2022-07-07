@@ -5,13 +5,13 @@ interface Props{}
 
 const Header:React.FC<Props> =()=>{
     return(
-        <React.Fragment>
+        <header>
             <nav>
-              <Link to={'/'}>首页</Link>
+              <Link to={'/'} >首页</Link>
               <Link to={'/history'}>上传历史</Link>
               <Link to={'/about'}>关于我</Link>
             </nav>
-        </React.Fragment>
+        </header>
     )
 }
 
