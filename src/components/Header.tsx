@@ -1,12 +1,15 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import  styled from 'styled-components'
 
 const StyledHeader=styled.header`
    background-color: red;
 `
-const StyledLink=styled(Link)`
-   color: yellow;
+const StyledLink=styled(NavLink)`
+  margin-left: 30px;
+   &.active{
+     color: yellow;
+   }
 `
 
 interface Props {
