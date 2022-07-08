@@ -8,6 +8,7 @@ const StyledHeader = styled.header`
   background-color: #02101f;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `
 const StyledLink = styled(NavLink)`
   margin-left: 30px;
@@ -16,6 +17,11 @@ const StyledLink = styled(NavLink)`
     color: yellow;
     border-bottom: 1px solid yellow;
   }
+`
+const StyledButton=styled.button`
+   color: white;
+  background-color: blue;
+  padding: 5px;
 `
 
 interface Props {
@@ -31,7 +37,7 @@ const Header: React.FC<Props> = () => {
                 <StyledLink to={'/about'}>关于我</StyledLink>
                 <StyledLink to={'/test'}>测试</StyledLink>
             </nav>
-            <button onClick={logout}>logout</button>
+            <StyledButton onClick={logout}>logout</StyledButton>
         </StyledHeader>
     )
 }
