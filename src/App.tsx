@@ -16,6 +16,19 @@ const About = lazy((): Promise<{ default: ComponentType<any> }> => {
 const History = lazy((): Promise<{ default: ComponentType<any> }> => {
     return import('./pages/History')
 })
+const NotFound = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/NotFound')
+})
+const Login = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/Login')
+})
+const Register = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/Register')
+})
+const Test = lazy((): Promise<{ default: ComponentType<any> }> => {
+    return import('./pages/Test')
+})
+
 
 const App: React.FC<{}> = () => {
     return (
@@ -27,6 +40,12 @@ const App: React.FC<{}> = () => {
                         <Route path="/" element={<Home/>}/>
                         <Route path="/history" element={<History/>}/>
                         <Route path="/about" element={<About/>}/>
+                        <Route path="/test" element={<Test/>}>
+                            <Route index element={<Register/>}/>
+                            <Route path="login" element={<Login/>}/>
+                            <Route path=":id" element={<Register/>}/>
+                        </Route>
+                        <Route path="*" element={<NotFound/>}/>
                     </Routes>
                 </main>
             </Suspense>

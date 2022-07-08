@@ -32,6 +32,10 @@ code {
     monospace;
 }
 
+body{
+  background-color: #f7f7f7;
+}
+
 #root{
   display: flex;
   flex-direction: column;
@@ -40,4 +44,9 @@ code {
 
 #main{
   flex: 1;
+  padding: 30px 100px;
+}
+
+#nprogress .bar{
+  background-color: #df4402;
 }

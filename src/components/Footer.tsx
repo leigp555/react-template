@@ -1,11 +1,25 @@
 import React from "react";
-interface Props{}
+import styled from "styled-components";
 
-const Footer:React.FC<Props> =()=>{
-    return(
-        <footer>
-            <h1>footer</h1>
-        </footer>
+interface Props {
+}
+
+const StyledFooter = styled.footer`
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 12px;
+  padding: 10px 100px;
+`
+
+
+const Footer: React.FC<Props> = () => {
+    return (
+        <StyledFooter>
+            <p>footer</p>
+        </StyledFooter>
     )
 }
 
