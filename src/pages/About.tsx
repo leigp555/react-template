@@ -9,5 +9,4 @@ const About:React.FC<Props> =()=>{
         </React.Fragment>
     )
 }
-
 export default About

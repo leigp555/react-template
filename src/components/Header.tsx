@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import {NavLink} from 'react-router-dom'
 import styled from 'styled-components'
+import {AuthContext} from "../App";
 
 const StyledHeader = styled.header`
   padding: 10px 100px;
@@ -21,6 +22,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = () => {
+    const {logout} =useContext(AuthContext)
     return (
         <StyledHeader>
             <nav>
@@ -29,6 +31,7 @@ const Header: React.FC<Props> = () => {
                 <StyledLink to={'/about'}>关于我</StyledLink>
                 <StyledLink to={'/test'}>测试</StyledLink>
             </nav>
+            <button onClick={logout}>logout</button>
         </StyledHeader>
     )
 }
